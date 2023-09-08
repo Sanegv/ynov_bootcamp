@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
+import TitlePage from './components/TitlePage';
 
 function App() {
   /*return (
@@ -32,10 +33,10 @@ function App() {
 
   const incrementCount = () => setCount(count+1); 
 
-
   console.log(user);
 
   return (
+    <div>
     <header>
       <p>Bonjour, {firstName}</p>
       {isAuth ? 
@@ -48,6 +49,8 @@ function App() {
         <button onClick={() => incrementCount()}>{count}</button>
       </p>
     </header>
+    <TitlePage title="monApp" subtitle="lorem ipsum"/>
+    </div>
   )
 }
 
