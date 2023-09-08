@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 
 function App() {
   /*return (
@@ -21,22 +22,31 @@ function App() {
     </div>
   );*/
 
-  const user = {
-    firstName: "Quentin",
-    lastName: "Lemaire",
-    isAuth: false
-  };
+  const[user, setUser] = useState({firstName: "Quentin", lastName: "Lemaire", isAuth: false});
+  const {firstName, lastName, isAuth} = user;
+  const [count, setCount] = useState(0);
 
-  const authentificateur = () => user.isAuth = true;
+  const authentificate = () => {
+    setUser({...user, isAuth: true});
+  }
+
+  const incrementCount = () => setCount(count+1); 
+
 
   console.log(user);
 
   return (
     <header>
-      <p>Bonjour, {user.firstName}</p>
-      {user.isAuth ? 
-        (<p>Vous êtes connecté</p>) : 
-        (<div><p>Vous n'êtes pas connecté</p><button onClick={() => authentificateur()}>Connexion</button></div>)}
+      <p>Bonjour, {firstName}</p>
+      {isAuth ? 
+        (<p>Vous êtes connecté</p>): 
+        (<div>
+          <p>Vous n'êtes pas connecté</p>
+          <button onClick={() => authentificate()}>Connexion</button>
+        </div>)}
+      <p>
+        <button onClick={() => incrementCount()}>{count}</button>
+      </p>
     </header>
   )
 }
