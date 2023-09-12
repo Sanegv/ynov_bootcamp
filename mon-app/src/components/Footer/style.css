@@ -1,0 +1,9 @@
+.footerComponent{
+	text-align: center;
+	background-color: black;
+	padding: 20px 0px;
+}
+
+.footerComponent p{
+	color: white;
+}

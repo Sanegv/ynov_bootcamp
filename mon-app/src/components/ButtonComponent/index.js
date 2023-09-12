@@ -1,10 +1,15 @@
+import "./style.css"
+
 const ButtonComponent = ({
-	name
+	name,
+	color,
+	handleClick,
+	type
 }) => { 
 	return (
-		<div className="button__component">
-			<button>{name}</button>
-		</div>
+		<button type={type} className={color} onClick={handleClick}>
+			{name};
+		</button>
 	);
 }
 
