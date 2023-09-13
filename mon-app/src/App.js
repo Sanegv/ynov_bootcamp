@@ -1,28 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TitlePage from './components/TitlePage';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import productCard from './components/productCard';
 
 function App() {
-    const[user, setUser] = useState({firstName: "Quentin", lastName: "Lemaire", isAuth: false});
-  const {firstName, lastName, isAuth} = user;
-  const [count, setCount] = useState(0);
 
-  const authentificate = () => {
-    setUser({...user, isAuth: true});
-  }
+  console.log("Page initialized.");
 
-  const incrementCount = () => setCount(count+1); 
 
-  console.log(user);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setProducts(data.products);
+      })
+      .catch(err => console.log(err))
+  }, []); 
 
   return (
     <div>
-    <Header/>
-    <TitlePage title="monApp" subtitle="lorem ipsum"/>
-    <Footer/>
+      <Header/>
+      <TitlePage 
+        title="monApp" 
+        subtitle="lorem ipsum"
+      />
+      <div className="product_grid">
+        {
+          products.map(
+            (product) => { return (
+                <productCard 
+                  title={product.title}
+                  description={product.description}
+                  imgSrc={product.thumbnail}
+                  price={product.price}
+                />
+              )
+            }
+          )
+        }
+      </div>
+      <Footer/>
     </div>
   )
 }

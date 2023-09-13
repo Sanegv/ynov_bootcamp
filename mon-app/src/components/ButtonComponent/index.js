@@ -8,7 +8,7 @@ const ButtonComponent = ({
 }) => { 
 	return (
 		<button type={type} className={color} onClick={handleClick}>
-			{name};
+			{name}
 		</button>
 	);
 }

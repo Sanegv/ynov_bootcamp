@@ -4,7 +4,7 @@ const index = () => {
 	return (
 		<header className="header_main">
 			<div className="header_logo">
-				<img src="../OW_logo.png" alt="logo Outer Wilds"/>
+				<a href="localhost:3000"><img src="../OW_logo.png" alt="logo Outer Wilds" /></a>
 			</div>
 			<nav className="header_nav">
 				<ul className="header_list">
