@@ -31,10 +31,18 @@ function App() {
       />
       <div className="product_grid">
         {
-          products.map(
-            (product) => (
-                <ProductCard product={product}/>
-              )
+          products.length > 0 ? (
+            products.map(
+              (product) => (
+                  <ProductCard product={product}/>
+                )
+            )
+          ) 
+          : (
+              <div className='no_products_found'>
+                <p>Nous ne parvenons pas à trouver les produits.</p>
+                <p>Veuillez vérifier votre connextion internet et réessayer.</p>
+              </div>
           )
         }
       </div>

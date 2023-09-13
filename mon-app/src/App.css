@@ -8,3 +8,8 @@
   flex-wrap: wrap;
   margin: 20px;
 }
+
+.no_products_found {
+  width: 100%;
+  text-align: center;
+}

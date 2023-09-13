@@ -6,17 +6,18 @@
 }
 
 .header_main .header_logo img {
-	width: 100px;
+	width: 150px;
 }
 
 .header_main .header_list {
+	margin-top: 35px;
 	display: flex;
 	justify-content: space-evenly;
 }
 
 .header_list .item_nav {
 	list-style: none;
-	margin: 15px;
+	margin: 20px;
 }
 
 .header_list .item_nav .item_link {

@@ -1,4 +1,5 @@
 import "./style.css"
+import SearchBar from "../SearchBar";
 
 const index = () => {
 	return (
@@ -25,6 +26,7 @@ const index = () => {
 					</li>
 				</ul>
 			</nav>
+			<SearchBar/>
 		</header>
 	)
 }
