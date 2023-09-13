@@ -7,6 +7,7 @@ const index = ({imgSrc, description, price, title}) => {
 			<div className="product_card-text">
 				<p className="product_card-text-title">{title}</p>
 				<p className="product_card-text-description">{description}</p>
+				<p>{price}€</p>
 			</div>
 		</div>
 	)

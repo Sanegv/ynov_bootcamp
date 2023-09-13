@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import TitlePage from './components/TitlePage';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import productCard from './components/productCard';
+import ProductCard from './components/ProductCard';
 
 function App() {
 
@@ -32,15 +32,21 @@ function App() {
       <div className="product_grid">
         {
           products.map(
-            (product) => { return (
-                <productCard 
+            (product) => (
+                <ProductCard 
                   title={product.title}
                   description={product.description}
                   imgSrc={product.thumbnail}
                   price={product.price}
                 />
+                /*<div className="product_card">
+                  <img src={product.thumbnail}/>
+                  <div className="product_card-text">
+                    <p className="product_card-text-title">{product.title}</p>
+                    <p className="product_card-text-description">{product.description}</p>
+                  </div>
+                </div>*/
               )
-            }
           )
         }
       </div>
