@@ -33,19 +33,7 @@ function App() {
         {
           products.map(
             (product) => (
-                <ProductCard 
-                  title={product.title}
-                  description={product.description}
-                  imgSrc={product.thumbnail}
-                  price={product.price}
-                />
-                /*<div className="product_card">
-                  <img src={product.thumbnail}/>
-                  <div className="product_card-text">
-                    <p className="product_card-text-title">{product.title}</p>
-                    <p className="product_card-text-description">{product.description}</p>
-                  </div>
-                </div>*/
+                <ProductCard product={product}/>
               )
           )
         }
